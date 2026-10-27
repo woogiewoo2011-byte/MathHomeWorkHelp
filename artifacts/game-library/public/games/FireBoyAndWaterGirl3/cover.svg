@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">FireBoy and WaterGirl 3</title>
+  <defs>
+    <linearGradient id="stone" x2="0" y2="1">
+      <stop stop-color="#30313a"/>
+      <stop offset="1" stop-color="#12151d"/>
+    </linearGradient>
+    <linearGradient id="fire" x2="0" y2="1">
+      <stop stop-color="#ffd15c"/>
+      <stop offset="1" stop-color="#ed4b1c"/>
+    </linearGradient>
+    <linearGradient id="water" x2="0" y2="1">
+      <stop stop-color="#a8f4ff"/>
+      <stop offset="1" stop-color="#1684d1"/>
+    </linearGradient>
+    <pattern id="blocks" width="48" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 39.5H48M47.5 0V40" fill="none" stroke="#aeb5c4" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" fill="url(#stone)"/>
+  <rect width="256" height="256" fill="url(#blocks)"/>
+  <path d="M0 78H256" stroke="#ffad47" stroke-opacity=".55"/>
+  <text x="128" y="34" text-anchor="middle" fill="#fff0c9" font-family="Arial,sans-serif" font-size="16" font-weight="800">FIREBOY &amp; WATERGIRL</text>
+  <text x="128" y="57" text-anchor="middle" fill="#f1a64d" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="3">GAME</text>
+  <text x="128" y="151" text-anchor="middle" fill="#f4ead5" font-family="Arial,sans-serif" font-size="92" font-weight="900" opacity=".95">3</text>
+  <path d="M30 220H226" stroke="#e4b77a" stroke-opacity=".5" stroke-width="3"/>
+  <circle cx="88" cy="177" r="26" fill="url(#fire)"/>
+  <path d="M61 204 75 185 88 202 101 183 115 204v16H61z" fill="#e34b24"/>
+  <circle cx="80" cy="174" r="3.5" fill="#39211b"/>
+  <circle cx="97" cy="174" r="3.5" fill="#39211b"/>
+  <path d="M78 187q10 8 20 0" fill="none" stroke="#39211b" stroke-linecap="round" stroke-width="3"/>
+  <circle cx="168" cy="177" r="26" fill="url(#water)"/>
+  <path d="M141 204 155 185 168 202 181 183 195 204v16h-54z" fill="#1979bf"/>
+  <circle cx="160" cy="174" r="3.5" fill="#152d43"/>
+  <circle cx="177" cy="174" r="3.5" fill="#152d43"/>
+  <path d="M158 187q10 8 20 0" fill="none" stroke="#152d43" stroke-linecap="round" stroke-width="3"/>
+  <circle cx="30" cy="102" r="3" fill="#ffca6a"/>
+  <circle cx="225" cy="113" r="4" fill="#76dfff"/>
+  <circle cx="212" cy="83" r="2.5" fill="#ffca6a"/>
+</svg>
