@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#20120f"/>
+      <stop offset=".52" stop-color="#9d351b"/>
+      <stop offset="1" stop-color="#f49b28"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#ffd889" stroke-opacity=".16"/>
+    </pattern>
+  </defs>
+  <rect width="740" height="500" fill="url(#bg)"/>
+  <rect width="740" height="500" fill="url(#grid)"/>
+  <circle cx="105" cy="102" r="26" fill="#ffe16a"/>
+  <circle cx="105" cy="102" r="11" fill="#fff6bd"/>
+  <circle cx="635" cy="385" r="26" fill="#ffe16a"/>
+  <circle cx="635" cy="385" r="11" fill="#fff6bd"/>
+  <rect x="40" y="40" width="660" height="420" rx="24" fill="none" stroke="#ffd889" stroke-opacity=".45" stroke-width="3"/>
+  <text x="370" y="215" text-anchor="middle" fill="#fff2d2" font-family="Arial, sans-serif" font-size="54" font-weight="800">WORLD'S</text>
+  <text x="370" y="278" text-anchor="middle" fill="#fff2d2" font-family="Arial, sans-serif" font-size="54" font-weight="800">HARDEST GAME</text>
+  <text x="370" y="330" text-anchor="middle" fill="#3b160f" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="5">CAN YOU BEAT IT?</text>
+</svg>

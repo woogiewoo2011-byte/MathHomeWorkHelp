@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/fnaf-assets/1/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five Nights at Freddy's 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/games/FNAF1/main.js"></script>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #050609; color: #f5e5cd; font-family: Arial, sans-serif; }
+      main { width: min(1100px, 100%); text-align: center; }
+      h1 { margin: 0 0 22px; font-size: clamp(1.6rem, 4vw, 2.5rem); }
+      #player { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #85502c; border-radius: 14px; background: #111; box-shadow: 0 0 50px rgba(215,131,61,.16), 0 24px 80px rgba(0,0,0,.7); }
+      #c2canvasdiv, #MMFCanvas { display: block; width: 100% !important; height: 100% !important; }
+      #fullscreen-button { position: absolute; top: 12px; left: 12px; z-index: 5; border: 1px solid rgba(255,216,137,.4); border-radius: 7px; padding: 8px 11px; background: rgba(14,10,9,.78); color: #ffe0a2; cursor: pointer; font: 700 11px Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+      #fullscreen-button:hover { border-color: #f1a14b; background: rgba(73,34,17,.9); }
+      #player:fullscreen { width: 100vw; height: 100vh; aspect-ratio: auto; border: 0; border-radius: 0; }
+      #player:fullscreen #MMFCanvas { width: 100vw !important; height: 100vh !important; }
+      #progress-container { position: absolute; inset: 50% auto auto 50%; width: min(360px, 80%); transform: translate(-50%, -50%); color: #ffe0a2; font-size: 13px; pointer-events: none; }
+      #progress-container > div { margin-bottom: 9px; }
+      #progress-container [id$="-bar"] { border-radius: 6px; }
+      small { display: block; margin-top: 14px; color: #6f5a48; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Five Nights at Freddy's 1</h1>
+      <div id="player">
+        <button id="fullscreen-button" type="button">Full screen</button>
+        <canvas id="MMFCanvas" width="1280" height="720">Your browser does not appear to support HTML5 canvas.</canvas>
+        <div id="progress-container">
+          <div>Downloading... <span id="download-text">connecting…</span></div>
+          <div style="background:#444;height:10px"><div id="download-bar" style="height:10px;background:#c27c15;width:0%"></div></div>
+          <div>Extracting... <span id="extract-text">0%</span></div>
+          <div style="background:#444;height:10px"><div id="extract-bar" style="height:10px;background:#10b981;width:0%"></div></div>
+        </div>
+      </div>
+      <small>Running via HTML5 Canvas.</small>
+    </main>
+    <script>
+      const playerFrame = document.getElementById('player');
+      const button = document.getElementById('fullscreen-button');
+      button.addEventListener('click', async () => document.fullscreenElement ? document.exitFullscreen() : playerFrame.requestFullscreen());
+      document.addEventListener('fullscreenchange', () => {
+        button.textContent = document.fullscreenElement ? 'Minimize screen' : 'Full screen';
+        window.dispatchEvent(new Event('resize'));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The World's Hardest Game 2</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: radial-gradient(circle at 50% 0%, #302013 0, #0b0c11 42%, #050609 100%);
+        font-family: Arial, sans-serif;
+        color: #f5e5cd;
+      }
+      main { width: min(900px, 100%); text-align: center; }
+      h1 { margin: 0 0 8px; font-size: clamp(1.6rem, 4vw, 2.5rem); }
+      p { margin: 0 0 22px; color: #ae9073; font-size: .9rem; }
+      #player {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 550 / 400;
+        overflow: hidden;
+        border: 1px solid #85502c;
+        border-radius: 14px;
+        background: #111;
+        box-shadow: 0 0 50px rgba(215, 131, 61, .16), 0 24px 80px rgba(0,0,0,.7);
+      }
+      ruffle-player { width: 100%; height: 100%; display: block; }
+      #fullscreen-button {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 5;
+        border: 1px solid rgba(255, 216, 137, .4);
+        border-radius: 7px;
+        padding: 8px 11px;
+        background: rgba(14, 10, 9, .78);
+        color: #ffe0a2;
+        cursor: pointer;
+        font: 700 11px Arial, sans-serif;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        backdrop-filter: blur(6px);
+      }
+      #fullscreen-button:hover {
+        border-color: #f1a14b;
+        background: rgba(73, 34, 17, .9);
+      }
+      #player:fullscreen {
+        width: 100vw;
+        height: 100vh;
+        aspect-ratio: auto;
+        border: 0;
+        border-radius: 0;
+      }
+      small { display: block; margin-top: 14px; color: #6f5a48; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>The World's Hardest Game 2</h1>
+      <p>Use the arrow keys to move. Collect the yellow coins and reach the green zone.</p>
+      <div id="player">
+        <button id="fullscreen-button" type="button">Full screen</button>
+      </div>
+      <small>Running via Ruffle, an open-source Flash emulator.</small>
+    </main>
+    <script>
+      const start = () => {
+        if (!window.RufflePlayer) return setTimeout(start, 100);
+        const player = window.RufflePlayer.newest().createPlayer();
+        const playerFrame = document.getElementById('player');
+        const fullscreenButton = document.getElementById('fullscreen-button');
+        playerFrame.appendChild(player);
+        player.load({ url: './game.swf' });
+
+        fullscreenButton.addEventListener('click', async () => {
+          if (document.fullscreenElement) {
+            await document.exitFullscreen();
+          } else {
+            await playerFrame.requestFullscreen();
+          }
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+          fullscreenButton.textContent = document.fullscreenElement ? 'Minimize screen' : 'Full screen';
+        });
+      };
+      start();
+    </script>
+  </body>
+</html>
